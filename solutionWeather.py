@@ -30,5 +30,7 @@ for point in destinations:
     loc = geocoder.arcgis(point)
     full_api_url = API_BASE_URL + str(loc.latlng[0]) + "," + str(loc.latlng[1])
     result = requests.request('GET', full_api_url).json()
-    print('result',result['currently']['temperature'])
+    #print('result',result['currently']['temperature'])
+    print('result',result["currently"]["temperature"])
+    # Both print works but if you use print(f"") then you have to use result['currently']['temperature'] instead of result["currently"]["temperature"]
     # From the result, print out the summary and current temperature.
